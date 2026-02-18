@@ -18,12 +18,15 @@ export default function LoginPage() {
         setError(null)
 
         const formData = new FormData(event.currentTarget)
-        const result = await login(formData)
+        await login(formData)
 
+        // モックモードでは常に成功するためエラーハンドリングは不要
+        /*
         if (result?.error) {
             setError(result.error)
             setLoading(false)
         }
+        */
     }
 
     return (

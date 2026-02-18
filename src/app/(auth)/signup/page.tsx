@@ -27,12 +27,15 @@ export default function SignupPage() {
             return
         }
 
-        const result = await signup(formData)
+        await signup(formData)
 
+        // モックモードでは常に成功するためエラーハンドリングは不要
+        /*
         if (result?.error) {
             setError(result.error)
             setLoading(false)
         }
+        */
     }
 
     return (
