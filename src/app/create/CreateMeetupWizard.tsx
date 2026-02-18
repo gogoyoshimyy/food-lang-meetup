@@ -31,7 +31,7 @@ export default function CreateMeetupWizard({ defaultCity }: CreateMeetupWizardPr
         beginner_friendly: 'true',
         public_place_only: 'true',
         photo_ok: 'true',
-        photo_ok: 'true',
+
         topics_avoid: '',
         participation_fee: '0',
     })
