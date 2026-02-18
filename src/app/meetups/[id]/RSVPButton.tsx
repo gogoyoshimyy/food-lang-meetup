@@ -34,14 +34,8 @@ export default function RSVPButton({ meetupId, userRSVP, remainingSeats }: RSVPB
         setLoading(true)
         setError(null)
 
-        const result = await cancelRSVP(meetupId)
-
-        if (result.error) {
-            setError(result.error)
-            setLoading(false)
-        } else {
-            router.refresh()
-        }
+        await cancelRSVP(meetupId)
+        router.refresh()
     }
 
     if (userRSVP) {

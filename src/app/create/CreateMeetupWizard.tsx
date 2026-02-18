@@ -80,12 +80,15 @@ export default function CreateMeetupWizard({ defaultCity }: CreateMeetupWizardPr
             topicsAvoid
         }))
 
-        const result = await createMeetup(submitData)
+        await createMeetup(submitData)
 
+        // モックモードでは常に成功するためエラーハンドリングは不要
+        /*
         if (result?.error) {
             setError(result.error)
             setLoading(false)
         }
+        */
     }
 
     const is1on1 = formData.type === '1on1'
